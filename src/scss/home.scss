@@ -1,3 +1,60 @@
 //====================================================================================================
 
+.page {
+}
+.main__block__container {
+}
+.main__title h1{
+	font-size:20px;
+}
+.main__search__form {
+}
+.main__text {
+}
+
+.rubriki__container {
+display: flex;
+justify-content: space-between;
+gap:20px;
+}
+.rubriki__item {
+	display: flex;
+	flex-direction: column;
+	width: 424px;
+height: 363px;
+justify-content: space-around;
+align-items: center;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+
+h3 {
+	font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: -0.01em;
+
+/* 2 */
+
+color: #425C5A;
+}
+
+.rubriki__item__btn {
+	background: linear-gradient(90deg, #56BB3E 7.67%, #425C5A 100%);
+	border-radius: 20px;
+	height: 60px;
+	width: 202px;
+	font-family: 'Arial';
+font-weight: 700;
+font-size: 20px;
+color: #FFFFFF;
+}
+
+
+
 //====================================================================================================
