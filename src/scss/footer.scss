@@ -1,3 +1,60 @@
 //====================================================================================================
+.footer {
+  border-top: 1px solid #C8C8C8;
+  font-weight: 500;
+
+  &__container {
+    display: grid;
+    @media (min-width:$mobile){
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    @include adaptiveValue("padding-top", 40, 15, 1920, 480, 1);
+    @include adaptiveValue("padding-bottom", 40, 15, 1920, 480, 1);
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(15);
+    border-bottom: 1px solid #C8C8C8;
+    @media (max-width:$mobile){
+      flex-wrap: wrap;
+    }
+    a {
+      white-space: nowrap;
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover){
+        &:hover{
+          color: $green;
+        }
+      }
+    }
+  }
+
+  &__link {
+    border-bottom: 1px dashed #000;
+    @media (any-hover: hover){
+      &:hover{
+        border: none;
+      }
+    }
+  }
+
+  &__copy {
+    @media (min-width:$mobile){
+      text-align: right;
+    }
+    @media (max-width:$mobile){
+      border-bottom: 1px solid #C8C8C8;
+    }
+  }
+
+  &__bottom {
+  }
+}
 
 //====================================================================================================

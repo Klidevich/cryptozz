@@ -51,3 +51,10 @@
     display: none !important;
   }
 }
+
+.page {
+  @include adaptiveValue("padding-top", 150, 101, 1920, 480, 2);
+  @media (max-width:$mobileSmall){
+    padding-top: rem(76);
+  }
+}

@@ -4,7 +4,7 @@
 
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, FLS } from "../files/functions.js";
-import { flsModules } from "../files/modules.js";
+import { mhzModules } from "../files/modules.js";
 
 /*
 Предмету, который будет двигаться за мышью указать атрибут data-prlx-mouse.
@@ -108,5 +108,5 @@ class MousePRLX {
 	}
 }
 // Запускаем и добавляем в объект модулей
-flsModules.mousePrlx = new MousePRLX({});
+mhzModules.mousePrlx = new MousePRLX({});
 

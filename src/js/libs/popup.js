@@ -5,7 +5,7 @@
 
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, bodyLockStatus, bodyLock, bodyUnlock, bodyLockToggle, FLS } from "../files/functions.js";
-import { flsModules } from "../files/modules.js";
+import { mhzModules } from "../files/modules.js";
 
 // Класс Popup
 class Popup {
@@ -356,4 +356,4 @@ class Popup {
 	}
 }
 // Запускаем и добавляем в объект модулей
-flsModules.popup = new Popup({});
+mhzModules.popup = new Popup({});
