@@ -5,33 +5,41 @@
 	})
 	<body>
 		<div class="wrapper">
-			@@include('html/_header.htm',{})
+			@@include('html/_header.htm',{
+        "active_1": " ",
+        "active_2": " ",
+        "active_3": " "
+      })
 			<main class="page">
-				<div class="main__block__container">
-					<div class="main__title"><h1>Search for company reviews</h1></div>
-					<div class="main__search__form">
-						<form action=""></form>
-					</div>
-					<div class="main__text"><h2>Top-Trade: reviews, top companies, and blacklist for avoiding scams</h2>
-					</div>
-					<!-- <img src="@img/main2.png" alt="image"> -->
-				</div>
-
+        <section class="search" style="background-image: url(@img/hero_bg.png);">
+          <div class="search__container">
+            <div class="search__head">
+              <h1 class="search__title">Search for company reviews</h1>
+            </div>
+            <form action="#" class="search__form">
+              <input data-required type="text" placeholder="Search for companies" class="search__input">
+              <button type="submit" class="search__button">
+                <img src="@img/search_trigger.png" alt="image">
+              </button>
+            </form>
+            <div class="search__text">Top-Trade: reviews, top companies, and blacklist for&nbsp;avoiding scams:</div>
+          </div>
+        </section>
 				<div class="rubriki__container">
 					<div class="rubriki__item">
 						<h3>Categories</h3>
 						<img src="@img/categories.png" alt="image">
-						<button class="rubriki__item__btn">Read more</button>
+						<a href="#" class="rubriki__item__btn">Read more</a>
 					</div>
 					<div class="rubriki__item">
 						<h3>Recommended companies</h3>
 						<img src="@img/recommended.png" alt="image">
-						<button class="rubriki__item__btn">Read more</button>
+						<a href="#" class="rubriki__item__btn">Read more</a>
 					</div>
 					<div class="rubriki__item">
 						<h3>Add a company to our website</h3>
 						<img src="@img/addacompay.png" alt="image">
-						<button class="rubriki__item__btn">Add a company</button>
+						<a href="#" class="rubriki__item__btn">Add a company</a>
 					</div>
 				</div>
 				<div class="popular__container">

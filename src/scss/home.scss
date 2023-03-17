@@ -54,11 +54,18 @@ color: #425C5A;
 	background: linear-gradient(90deg, #56BB3E 7.67%, #425C5A 100%);
 	border-radius: 20px;
 	height: 60px;
+  display: flex;
+  justify-content:center;align-items: center;
 	width: 202px;
 	font-family: 'Arial';
-font-weight: 700;
-font-size: 20px;
-color: #FFFFFF;
+  font-weight: 700;
+  font-size: 20px;
+  color: #FFFFFF;
+  @media (any-hover: hover){
+    &:hover{
+      background: $greengradReverse;
+    }
+  }
 }
 
 
@@ -264,3 +271,100 @@ letter-spacing: -0.01em;
 
 
 //====================================================================================================
+
+
+.rubriki {
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("padding-top", 30, 15, 1920, 480, 1);
+    @include adaptiveValue("padding-left", 30, 15, 1920, 480, 1);
+    @include adaptiveValue("padding-right", 30, 15, 1920, 480, 1);
+    @include adaptiveValue("padding-bottom", 30, 15, 1920, 480, 1);
+    justify-content: space-between;
+  }
+}
+
+//=============================================================================================
+:root {
+  @include adaptiveValue("--hdrhgh", 150, 101, 1920, 480, 2);
+}
+.search {
+  // height: calc(100vh - var(--hdrhgh));
+  background-repeat: no-repeat;
+  background-color: rgb(232, 238, 254);
+  background-position: top center;
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 100, 40);
+  }
+
+  &__container {
+    @include adaptiveValue("padding-top", 140, 50);
+    @include adaptiveValue("padding-bottom", 111, 50);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: rem(865);
+  }
+
+  &__head {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 80, 30);
+    }
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 88, 20);
+    text-align: center;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: rem(646);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 100, 30);
+    }
+  }
+
+  &__input {
+    border-radius: rem(999999);
+    border: 1px solid #C8C8C8;
+    @include adaptiveValue("padding-top", 23, 15, 1920, 767, 1);
+    @include adaptiveValue("padding-bottom", 23, 15, 1920, 767, 1);
+    @include adaptiveValue("padding-left", 37, 15, 1920, 767, 1);
+    padding-right: rem(95);
+    width: 100%;
+    &::placeholder {
+      color:#000;
+    }
+    &._form-error {
+      border-color: red;
+      &::placeholder {
+        color:red;
+      }
+    }
+  }
+
+  &__button {
+    flex: 0 0 rem(80);
+    width: rem(80);
+    height: rem(80);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    @include adaptiveValue("font-size", 32, 16);
+    text-align: center;
+  }
+}

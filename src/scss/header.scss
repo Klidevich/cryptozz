@@ -6,6 +6,8 @@
   width: 100%;
   transition: transform 0.3s ease 0s;
   background-color: #fff;
+  position: relative;
+  z-index: 9999;
   &._header-scroll {
     transform: translateY(-150%);
   }
@@ -101,6 +103,8 @@
   }
 
   &__item {
+    @include adaptiveValue("padding-left", 27, 13, 1920, 767, 2);
+    @include adaptiveValue("padding-right", 27, 13, 1920, 767, 2);
     @media (max-width:$mobile){
       &:nth-child(2n) {
         background-color: rgba(87, 187, 62, 0.3);
@@ -110,13 +114,17 @@
 
   &__link {
     display: block;
-    @include adaptiveValue("padding-left", 27, 13, 1920, 767, 1);
-    @include adaptiveValue("padding-right", 27, 13, 1920, 767, 1);
     transition: all 0.3s ease 0s;
     font-weight: 500;
     @media (any-hover: hover){
       &:hover{
         color: $green;
+      }
+    }
+    @media (min-width:$mobile){
+      &._active {
+        color: #044313;
+        border-bottom: 1px solid #044313;
       }
     }
     @media (max-width:$mobile){
