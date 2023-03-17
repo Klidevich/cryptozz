@@ -11,6 +11,231 @@
         "active_3": " "
       })
 			<main class="page">
+        <section class="pagehead" style="background-image: url(@img/pagehead_bg.png);">
+          <div class="pagehead__wrapper">
+            <div class="pagehead__container">
+              <h1 class="pagehead__title">Сategories</h1>
+              <div class="pagehead__breadcrumbs breadcrumbs">
+                <ul class="breadcrumbs__list">
+                  <li><a href="home.html">Main page</a></li>
+                  <li><span>Сategories</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="categories">
+          <div class="categories__container">
+            <aside class="categories__sidebar">
+              <div data-spollers class="categories__menu menu-categories">
+                <div class="menu-categories__item">
+                  <button type="button" data-spoller class="menu-categories__title green-title _spoller-active">Сategories</button>
+                  <div class="menu-categories__body">
+                    <a href="#" class="menu-categories__link _active">
+                      Forex Brokers
+                    </a>
+                    <a href="#" class="menu-categories__link">
+                      Binary Options Brokers
+                    </a>
+                    <a href="#" class="menu-categories__link">
+                      Crypto Brokers
+                    </a>
+                    <a href="#" class="menu-categories__link">
+                      Investment Companies
+                    </a>
+                    <a href="#" class="menu-categories__link">
+                      Crypto Exchanges
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a href="#" data-popup="#categoriesFilers" class="categories__filterTrigger green-title">Filters</a>
+              <div class="categories__filters filters-categories" data-spollers="991, min" data-da=".categoriesFilers__text, 992">
+                <div class="filters-categories__item">
+                  <div class="filters-categories__title green-title _spoller-active" data-spoller>Order Execution:</div>
+                  <div class="filters-categories__body">
+                    <div class="filters-categories__boxes boxes-filters boxes-filters_wrap">
+                      <label class="boxes-filters__item">
+                        <input checked type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">STP</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">NDD</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">ECN</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">DMA</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">MM</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters-categories__item">
+                  <div class="filters-categories__title green-title _spoller-active" data-spoller>Jurisdiction</div>
+                  <div class="filters-categories__body">
+                    <div class="filters-categories__boxes boxes-filters">
+                      <label class="boxes-filters__item">
+                        <input checked type="radio" name="offshore" class="boxes-filters__input">
+                        <span class="boxes-filters__label">Offshore</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="radio" name="offshore" class="boxes-filters__input">
+                        <span class="boxes-filters__label">Not Offshore</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters-categories__item">
+                  <div class="filters-categories__title green-title _spoller-active" data-spoller>Leverage</div>
+                  <div class="filters-categories__body">
+                    <div class="filters-categories__range range-filters" data-range-parent>
+                      <div data-range min="1" max="2000"></div>
+                      <div class="range-filters__output">
+                        <span>From 1:1</span>
+                        <span> to 1:2000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters-categories__item">
+                  <div class="filters-categories__title green-title _spoller-active" data-spoller>Demo Account</div>
+                  <div class="filters-categories__body">
+                    <div class="filters-categories__boxes boxes-filters">
+                      <label class="boxes-filters__item">
+                        <input checked type="radio" name="demo" class="boxes-filters__input">
+                        <span class="boxes-filters__label">Yes</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="radio" name="demo" class="boxes-filters__input">
+                        <span class="boxes-filters__label">No</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters-categories__item">
+                  <div class="filters-categories__title green-title _spoller-active" data-spoller>Foundation Year</div>
+                  <div class="filters-categories__body">
+                    <div class="filters-categories__range range-filters" data-range-parent>
+                      <div data-range min="1971" max="2022" data-step="1"></div>
+                      <div class="range-filters__output">
+                        <span>1971</span>
+                        <span>2022</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters-categories__item">
+                  <div class="filters-categories__title green-title _spoller-active" data-spoller>Order Execution:</div>
+                  <div class="filters-categories__body">
+                    <div class="filters-categories__boxes boxes-filters boxes-filters_wrap">
+                      <label class="boxes-filters__item">
+                        <input checked type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">ASIC</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">Consob</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">NB RB</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">DFSA</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">FSMA</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">VFSC</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">IFSC</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">FSCL</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">BVIFSC</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">SVGFSA</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">CySEC</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">CNMV</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">FSA</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">SIBA</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">DFSA</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">SIPC</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">ACPR</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">SEC</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">BaFin</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">CFTS</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">FinCom</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">FCA</span>
+                      </label>
+                      <label class="boxes-filters__item">
+                        <input type="checkbox" class="boxes-filters__input">
+                        <span class="boxes-filters__label">FSC Mauritius</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+            <div class="categories__main main-categories"></div>
+          </div>
+        </section>
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>

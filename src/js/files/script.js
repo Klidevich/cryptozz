@@ -24,5 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const copyYear = document.querySelector('.footer__copy span');
-  copyYear ? copyYear.innerHTML = new Date().getFullYear() : null
+  copyYear ? copyYear.innerHTML = new Date().getFullYear() : null;
+
+  const menuCategoriesTriggers =document.querySelectorAll('.menu-categories__title._spoller-active');
+  if (menuCategoriesTriggers.length) {
+    menuCategoriesTriggers.forEach(menuCategoriesTrigger=>{
+      if (window.innerWidth < 992) {
+        menuCategoriesTrigger.click();
+      }
+      window.addEventListener('resize', (e)=>{
+        if (window.innerWidth < 992) {
+          menuCategoriesTrigger.click();
+        }
+      })
+    })
+  }
 })
+

@@ -1,0 +1,217 @@
+.categories {
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    @include adaptiveValue("gap", 100, 30, 1920, 480, 1);
+    @include adaptiveValue("padding-top", 80, 40, 1920, 480, 1);
+    @include adaptiveValue("padding-bottom", 100, 50, 1920, 480, 1);
+    @media (max-width:$tablet){
+      flex-direction: column;
+    }
+  }
+
+  &__sidebar {
+    display: flex;
+    @media (min-width:$tablet){
+      flex: 0 0 rem(333);
+      flex-direction: column;
+    }
+    @media (max-width:$tablet){
+      width: 100%;
+      gap: rem(15);
+    }
+  }
+
+  &__menu {
+  }
+
+  &__filters {
+  }
+
+  &__filterTrigger {
+    flex: 0 1 50%;
+    @media (min-width:$tablet){
+      display: none;
+    }
+  }
+
+  &__main {
+  }
+}
+.menu-categories {
+  position: relative;
+  z-index: 3;
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 80, 20, 1920, 992, 1);
+  }
+  @media (max-width:$tablet){
+    flex: 0 1 50%;
+    &:not(:last-child) {margin-bottom: rem(0);}
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__title {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__body {
+    border-radius: 0 0 rem(20) rem(20);
+    border: 1px solid #C8C8C8;
+    background-color: #fff;
+    padding: rem(40) rem(20) rem(20);
+    z-index: 2;
+    @media (min-width:$tablet){
+      margin-top: rem(-20);
+    }
+    @media (max-width:$tablet){
+      position: absolute;
+      top: calc(100% - rem(20));
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &__link {
+    padding: rem(20) 0;
+    display: block;
+    transition: color 0.3s ease 0s;
+    @include adaptiveValue("font-size", 24, 16, 1920, 480, 1);
+    &:not(:last-child) {
+      border-bottom: 1px solid #C8C8C8;
+    }
+    &._active {
+      color: $green;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        color: $green;
+      }
+    }
+  }
+}
+.filters-categories {
+  display: flex;
+  @include adaptiveValue("gap", 40, 20, 1920, 992, 1);
+  @media (min-width:$tablet){
+    flex-direction: column;
+  }
+  @media (max-width:$tablet){
+    flex-wrap: wrap;
+  }
+
+  &__item {
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__body {
+    border-radius: 0 0 rem(20) rem(20);
+    border: 1px solid #C8C8C8;
+    background-color: #fff;
+    padding: rem(50) rem(20) rem(40);
+    margin-top: rem(-20);
+    @media (max-width:$tablet){
+      padding-bottom: rem(20);
+    }
+  }
+
+  &__boxes {
+  }
+
+  &__range {
+  }
+}
+.boxes-filters {
+  display: grid;
+  gap: rem(15);
+
+  &_wrap {
+    @media (min-width:$mobileSmall){
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    &:checked+.boxes-filters__label::before {
+      background-color: $green;
+    }
+  }
+
+  &__label {
+    display: flex;
+    gap: rem(25);
+    &::before{
+      content:'';
+      flex: 0 0 rem(25);
+      width: rem(25);
+      height: rem(25);
+      background-color: #D9D9D9;
+      transition: background-color 0.3s ease 0s;
+    }
+  }
+}
+.range-filters {
+  [data-range] {
+    &:not(:last-child) {margin-bottom: rem(20);}
+    height: rem(3);
+    .noUi-base,
+    .noUi-connects,
+    .noUi-connect {
+      background-color: #57BB3F;
+    }
+    .noUi-handle {
+      border-radius: 50%;
+      width: rem(30);
+      height: rem(30);
+      background-color: #57BB3F;
+      right: rem(-15);
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      box-shadow: none;
+      &::before,&::after{
+        display: none;
+      }
+    }
+    .noUi-tooltip {
+      bottom: auto;
+      top: 120%;
+      font-size: rem(14);
+      transition: all 0.3s ease 0s;
+      opacity: 0;
+    }
+    .noUi-active .noUi-tooltip {
+      transition: all 0.7s ease 0s;
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  &__output {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: rem(10);
+  }
+}
