@@ -8,7 +8,7 @@
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, FLS } from "./functions.js";
 // Подключение списка активных модулей
-import { flsModules } from "./modules.js";
+import { mhzModules } from "./modules.js";
 
 // Подключение базового набора функционала
 import lightGallery from 'lightgallery';
@@ -51,7 +51,7 @@ if (galleries.length) {
 		})
 	});
 	// Добавляем в объект модулей
-	flsModules.gallery = galleyItems;
+	mhzModules.gallery = galleyItems;
 }
 
 

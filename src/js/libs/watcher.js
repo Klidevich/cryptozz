@@ -1,6 +1,6 @@
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, uniqArray, FLS } from "../files/functions.js";
-import { flsModules } from "../files/modules.js";
+import { mhzModules } from "../files/modules.js";
 
 // Наблюдатель объектов [всевидещее око]
 // data-watch - можно писать значение для применения кастомного кода
@@ -163,4 +163,4 @@ class ScrollWatcher {
 	}
 }
 // Запускаем и добавляем в объект модулей
-flsModules.watcher = new ScrollWatcher({});
+mhzModules.watcher = new ScrollWatcher({});

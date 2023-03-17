@@ -71,6 +71,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"@splidejs/splide": "latest",
 		"simplebar": "latest"
 	}
 }

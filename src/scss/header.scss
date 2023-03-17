@@ -1,9 +1,192 @@
 //====================================================================================================
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease 0s;
+  background-color: #fff;
+  &._header-scroll {
+    transform: translateY(-150%);
+  }
+  &._header-show {
+    transform: none;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(15);
+    @include adaptiveValue("padding-top", 30, 15, 1920, 480, 1);
+    @include adaptiveValue("padding-bottom", 40, 15, 1920, 480, 1);
+  }
+
+  &__logo {
+    img {
+      @include adaptiveValue("max-height", 81, 40);
+      display: block;
+    }
+  }
+
+  &__menu {
+  }
+
+  &__search {
+  }
+}
+.menu {
+  @media (max-width:$mobile){
+    order: 1;
+    z-index: 999;
+  }
+
+  &__iconwrap {
+    background-color: $green;
+    padding: rem(15) rem(10);
+    border-radius: rem(5);
+    position: relative;
+    z-index: 5;
+    @media (min-width:$mobile){
+      display: none;
+    }
+  }
+
+  &__icon {
+  }
+
+  &__close {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease 0.15s;
+    transform: translateX(-150%);
+    .menu-open & {
+      transform: none;
+    }
+    @media (min-width:$mobile){
+      display: none;
+    }
+  }
+
+  &__body {
+    @media (max-width:$mobile){
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: rem(320);
+      height: 100vh;
+      overflow-y: auto;
+      background-color: #fff;
+      box-shadow: 6px 0px 8px 0px rgba(34, 60, 80, 0.2);
+      transform: translateX(-150%);
+      transition: all 0.3s ease 0s;
+      .menu-open & {
+        transform: none;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    @media (max-width:$mobile){
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__item {
+    @media (max-width:$mobile){
+      &:nth-child(2n) {
+        background-color: rgba(87, 187, 62, 0.3);
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    @include adaptiveValue("padding-left", 27, 13, 1920, 767, 1);
+    @include adaptiveValue("padding-right", 27, 13, 1920, 767, 1);
+    transition: all 0.3s ease 0s;
+    font-weight: 500;
+    @media (any-hover: hover){
+      &:hover{
+        color: $green;
+      }
+    }
+    @media (max-width:$mobile){
+      padding: rem(20);
+      font-size: rem(18);
+    }
+  }
+}
+.search-header {
+  display: flex;
+  position: relative;
+  @media (max-width:$mobile){
+    flex: 1 1 auto;
+  }
+  @media (max-width:$mobileSmall){
+    display: none;
+  }
+
+  &__form {
+    flex: 1 1 auto;
+    [type="submit"] {
+      position: relative;
+      z-index: 9;
+    }
+  }
+
+  &__input {
+    border-radius: rem(999999) 0 0 rem(999999);
+    border: 1px solid #C8C8C8;
+    overflow: hidden;
+    height: 100%;
+    transform-origin: right center;
+    transition: transform 0.4s ease 0s;
+    padding: rem(15);
+    transition: all 0.3s ease 0s;
+    @media (min-width:$mobile){
+      transform: scaleX(0);
+      position: absolute;
+      right: rem(35);
+      top: 0;
+      min-width: rem(270);
+    }
+    @media (max-width:$mobile){
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+    ._active & {
+      transform: none;
+    }
+    &._form-error {
+      border-color: red;
+    }
+  }
+
+  &__trigger {
+    position: relative;
+    z-index: 2;
+    @media (max-width:$mobile){
+      transform: translateX(rem(-35));
+    }
+    img {
+      pointer-events: none;
+    }
+  }
+}
 
 //====================================================================================================
 
 //Burger
-/*
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
@@ -22,7 +205,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #000;
+			background-color: #fff;
 		}
 		&::before {
 			top: 0;
@@ -51,4 +234,3 @@
 		}
 	}
 }
-*/

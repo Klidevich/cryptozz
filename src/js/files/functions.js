@@ -1,5 +1,5 @@
 // Подключение списка активных модулей
-import { flsModules } from "./modules.js";
+import { mhzModules } from "./modules.js";
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 export function isWebp() {
@@ -413,7 +413,7 @@ export function tabs() {
 export function menuInit() {
 	if (document.querySelector(".icon-menu")) {
 		document.addEventListener("click", function (e) {
-			if (bodyLockStatus && e.target.closest('.icon-menu')) {
+			if (bodyLockStatus && e.target.closest('[data-menu-toggle]')) {
 				bodyLockToggle();
 				document.documentElement.classList.toggle("menu-open");
 			}

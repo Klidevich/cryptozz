@@ -1,6 +1,6 @@
 // Подключение функционала "Чертогов Фрилансера"
 // Подключение списка активных модулей
-import { flsModules } from "../modules.js";
+import { mhzModules } from "../modules.js";
 // Вспомогательные функции
 import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
 // Модуль прокрутки к блоку
@@ -134,12 +134,12 @@ export let formValidate = {
 					checkbox.checked = false;
 				}
 			}
-			if (flsModules.select) {
+			if (mhzModules.select) {
 				let selects = form.querySelectorAll('.select');
 				if (selects.length) {
 					for (let index = 0; index < selects.length; index++) {
 						const select = selects[index].querySelector('select');
-						flsModules.select.selectBuild(select);
+						mhzModules.select.selectBuild(select);
 					}
 				}
 			}
@@ -210,9 +210,9 @@ export function formSubmit(options = { validate: true }) {
 		// Показываем попап, если подключен модуль попапов 
 		// и для формы указана настройка
 		setTimeout(() => {
-			if (flsModules.popup) {
+			if (mhzModules.popup) {
 				const popup = form.dataset.popupMessage;
-				popup ? flsModules.popup.open(popup) : null;
+				popup ? mhzModules.popup.open(popup) : null;
 			}
 		}, 0);
 		// Очищаем форму
