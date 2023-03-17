@@ -124,6 +124,143 @@ color: #000000;
 .popular__item__comments {
 }
 
+.comments__container {
+	padding-top: 100px;
+}
+
+.comments__tittle {
+	font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: -0.01em;
+padding-bottom: 50px;
+}
+.comments_blocks__wrapper{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	column-gap:20px;
+	padding-bottom: 100px;
+	
+}
+.comments__blocks {
+	background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+.comments__blocks__item {
+
+}
+.comments__blocks__item__top {
+	display:flex;
+	background: #57BB3F;
+border-radius: 20px;
+
+}
+.__item__top__img {
+}
+.__item__top__textblock {
+}
+.__top__textblock__text {
+	padding-top: 16px;
+	font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: -0.01em;
+
+color: #FFFFFF;
+}
+.__top__textblock__stars {
+}
+.comments__blocks__item__bot {
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+}
+
+
+.__bot__textblock__img {
+	padding-top: 11px;
+	padding-bottom: 5px;
+}
+.__bot__textblock__name {
+padding-bottom: 25px;;
+	font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: -0.01em;
+}
+.__bot__textblock__review {
+	align-self: flex-start;
+	padding-bottom: 83px;
+	font-family: 'Montserrat';
+font-style: italic;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+letter-spacing: -0.01em;
+}
+
+.big__btns__container {
+	display:flex;
+	background: url(../img/backgrbot.png)
+}
+.big__btns_wrapper {
+	padding-top: 78px;
+	padding-bottom: 78px;
+	display: grid;
+	column-gap:20px;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.big__btns__item {
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+}
+.big_btns__item__img {
+	padding-top: 26px;
+	padding-bottom: 20px;
+}
+.big_btns__item__tittle {
+	font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: -0.01em;
+
+/* 2 */
+
+color: #425C5A;
+}
+.big_btns__item__text {
+	padding-top: 30px;
+	font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+text-align: center;
+letter-spacing: -0.01em;
+}
+
+
 
 
 //====================================================================================================
