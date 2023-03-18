@@ -127,3 +127,42 @@
 ._green {
   color: $green;
 }
+._content {
+  letter-spacing: -0.01em;
+  
+  p:not(:last-child) {
+    margin-bottom: rem(20);
+  }
+  h2 {
+    font-size: rem(20);
+    font-weight: 700;
+  }
+  ul:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  ul li:not(:last-child) {
+    margin-bottom: 0.4375rem;
+  }
+  ul li {
+    list-style: initial;
+    position: relative;
+  }
+  ol li {
+    margin-left: rem(20);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  td {
+    border: rem(1) solid #000;
+    display: flex;
+    align-items: center;
+    text-align: left !important;
+    padding: rem(7);
+  }
+}
