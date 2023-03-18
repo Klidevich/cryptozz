@@ -48,7 +48,7 @@ export function rangeInit() {
         const max = range.hasAttribute('max') ? parseFloat(range.getAttribute('max')) : 99999999;
         const step = range.hasAttribute('data-step') ? parseFloat(range.getAttribute('data-step')) : null;
         
-        noUiSlider.create(range, {
+        let rangeSlider = noUiSlider.create(range, {
           start: 0, // [0,200000]
           connect: [true, false],
           tooltips: [true],
