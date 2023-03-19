@@ -63,6 +63,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })
 
+  const tabsAdditionalKeys =document.querySelectorAll('.additional-tabs__key');
+  if (tabsAdditionalKeys.length) {
+    if (window.innerWidth <= 767&&window.innerWidth > 480) {
+      setTabsAdditionalKeysWidth(tabsAdditionalKeys);
+    }
+    window.addEventListener('resize', (e)=>{
+      if (window.innerWidth <= 767&&window.innerWidth > 480) {
+        setTabsAdditionalKeysWidth(tabsAdditionalKeys);
+      }
+    })
+  }
 })
 
 
@@ -172,4 +183,17 @@ function renderFiltersItems(mainCategoriesFilters, filtersParent) {
   }
   
   mainCategoriesFilters.innerHTML = str;
+}
+
+function setTabsAdditionalKeysWidth(tabsAdditionalKeys) {
+  let arr = [];
+  tabsAdditionalKeys.forEach(tabsAdditionalKey=>{
+    tabsAdditionalKey.style.minWidth = `0`;
+  });
+  tabsAdditionalKeys.forEach(tabsAdditionalKey=>{
+    arr.push(tabsAdditionalKey.getBoundingClientRect().width);
+  });
+  tabsAdditionalKeys.forEach(tabsAdditionalKey=>{
+    tabsAdditionalKey.style.minWidth = `${Math.max(...arr) + 30}px`;
+  });
 }

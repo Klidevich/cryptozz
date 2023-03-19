@@ -53,8 +53,3 @@ if (galleries.length) {
 	// Добавляем в объект модулей
 	mhzModules.gallery = galleyItems;
 }
-
-
-
-
-

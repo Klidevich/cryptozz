@@ -8,8 +8,6 @@ document.addEventListener( 'DOMContentLoaded', function () {
   const thumbsRecomended = document.querySelector('.thumbs-recomended__slider');
   const mainRecomended = document.querySelector('.main-recomended__slider');
   if (thumbsRecomended&&mainRecomended) {
-    const thumbsPrev = document.querySelector('.thumbs-recomended__arrow_prev');
-    const thumbsNext = document.querySelector('.thumbs-recomended__arrow_next');
     var main = new Splide(mainRecomended, {
       type      : 'fade',
       rewind    : true,
@@ -51,5 +49,26 @@ document.addEventListener( 'DOMContentLoaded', function () {
     main.sync( thumbnails );
     main.mount();
     thumbnails.mount();
+  }
+
+  if (document.querySelector('.like-recomended__slider')) {
+    new Splide('.like-recomended__slider', {
+      type: 'loop',
+      perPage: 4,
+      perMove: 1,
+      gap: 20,
+      autoplay: true,
+      breakpoints: {
+        992: {
+          perPage: 3,
+        },
+        767: {
+          perPage: 2,
+        },
+        480: {
+          perPage: 1,
+        },
+      }
+    } ).mount();
   }
 } );

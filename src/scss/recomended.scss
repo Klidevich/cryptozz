@@ -193,3 +193,596 @@
     }
   }
 }
+.contacts-recomended {
+  @include adaptiveValue("padding-top", 33, 10, 1920, 480, 1);
+  @include adaptiveValue("padding-bottom", 50, 25, 1920, 480, 1);
+  display: flex;
+  @include adaptiveValue("gap", 25, 15, 1920, 480, 1);
+  @media (min-width:$mobile){
+    justify-content: space-between;
+  }
+  @media (max-width:$mobile){
+    flex-direction: column;
+  }
+
+  &__rows {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 25, 15, 1920, 480, 1);
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+    font-weight: 600;
+    @include adaptiveValue("font-size", 24, 16, 1920, 480, 1);
+    span {
+      color: $darkgreen;
+    }
+    a {
+      color: $green;
+      transition: all 0.3s ease 0s;
+      svg {
+        @include adaptiveValue("max-width", 40, 25, 1920, 480, 1);
+        @include adaptiveValue("max-height", 40, 25, 1920, 480, 1);
+      }
+      @media (any-hover: hover){
+        &:hover{
+          color: $darkgreen;
+        }
+      }
+    }
+  }
+
+  &__goto {
+    @include adaptiveValue("min-width", 424, 280);
+    @media (min-width:$mobile){
+      align-self: flex-end;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.tabs-recomended {
+  @include adaptiveValue("padding-top", 50, 25, 1920, 480, 1);
+  @include adaptiveValue("padding-bottom", 50, 25, 1920, 480, 1);
+
+  &__navigation {
+    display: flex;
+    gap: rem(20);
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    transition: all 0.3s ease 0s;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    background-color: #F5F5F5;
+    color: #044313;
+    @include adaptiveValue("padding", 35, 13, 1920, 480, 1);
+    @include adaptiveValue("font-size", 24, 16);
+    &._tab-active {
+      background-color: $green;
+      color: #fff;
+    }
+    &::before{
+      content:'';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: rem(5);
+      background-color: $green;
+      transition: transform 0.3s ease 0s;
+      transform: translateX(-150%);
+    }
+    @media (any-hover: hover){
+      &:hover{
+        &::before{
+          transform: none;
+        }
+      }
+    }
+  }
+
+  &__content {
+  }
+
+  &__body {
+    border: 1px solid #D9D9D9;
+  }
+
+  &__reviews {
+  }
+
+  &__reivew {
+  }
+
+  &__additionals {
+    padding: rem(10) 0 rem(50);
+  }
+
+  &__additional {
+  }
+}
+:root {
+  @include adaptiveValue("--rwphw", 170, 100, 1920, 480, 1);
+}
+.review-tabs {
+
+  &__body {
+    display: flex;
+    @include adaptiveValue("gap", 56, 15);
+    @include adaptiveValue("padding-top", 45, 20, 1920, 480, 1);
+    @include adaptiveValue("padding-bottom", 60, 30, 1920, 480, 1);
+    @include adaptiveValue("padding-left", 111, 15);
+    @include adaptiveValue("padding-right", 111, 15);
+    &:not(:first-child) {
+      border-top: 1px solid #D9D9D9;
+    }
+    @media (max-width:$pc){
+      flex-wrap: wrap;
+    }
+    @media (max-width: em(550)){
+      flex-direction: column;
+    }
+  }
+
+  &__photo {
+    flex: 0 0 var(--rwphw);
+    img {
+      @media (min-width:em(550)){
+        width: 100%;
+      }
+      @media (max-width: em(550)){
+        height: 100%;
+      }
+      max-height: var(--rwphw);
+      aspect-ratio: 1
+    }
+  }
+
+  &__info {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+
+  &__row {
+    display: flex;
+    @include adaptiveValue("gap", 32, 16);
+    @media (min-width:em(550)){
+      &:not(:last-child) {margin-bottom: rem(10);}
+    }
+  }
+
+  &__date {
+    font-weight: normal;
+  }
+
+  &__rating {
+    display: flex;
+    gap: rem(5);
+    svg {
+      max-width: rem(25);
+      max-height: rem(25);
+    }
+  }
+
+  &__pencil {
+    svg {
+      max-width: rem(20);
+      max-height: rem(20);
+    }
+    path {
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        path {
+          fill: $green
+        }
+      }
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: rem(20);
+  }
+
+  &__text {
+  }
+
+  &__likes {
+    display: flex;
+    gap: rem(15);
+    path {
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover){
+      a:hover{
+        path { 
+          fill: $green;
+        }
+      }
+    }
+    @media (min-width:em(550)){
+      margin-left: auto;
+      align-self: flex-end;
+      padding-bottom: rem(15);
+    }
+  }
+
+  &__like {
+    display: flex;
+    align-items: flex-end;
+    gap: rem(5);
+    padding-bottom: rem(7);
+  }
+
+  &__dislike {
+    display: flex;
+    align-items: flex-start;
+    gap: rem(5);
+    padding-top: rem(7);
+  }
+
+  &__reply {
+    @include adaptiveValue("min-width", 313, 280);
+    @media (min-width:em(550)){
+      align-self: flex-end;
+    }
+    @media (max-width:$pc){
+      flex: 1 1 auto;
+    }
+  }
+
+  &__form {
+  }
+}
+.form-tabs {
+  @include adaptiveValue("padding-left", 111, 15);
+  @include adaptiveValue("padding-right", 111, 15);
+  @include adaptiveValue("padding-bottom", 60, 30, 1920, 480, 1);
+
+  &__head {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 15, 1920, 480, 1);
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    @include adaptiveValue("font-size", 24, 20);
+  }
+
+  &__body {
+    display: grid;
+    gap: rem(20);
+    @media (min-width:$tablet){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &:not(:last-child) {margin-bottom: rem(15);}
+  }
+
+  &__item {
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: rem(20);
+    border: 1px solid #ccc;
+    padding: rem(16) rem(25);
+    transition: all 0.3s ease 0s;
+    &::placeholder {
+      color:#000;
+    }
+    &._form-error {
+      box-shadow: 0px 0px 18px 0px rgba(255, 0, 0, 0.2) inset;
+      border-color: rgb(255, 0, 0);
+      &::placeholder {
+        color:rgb(255, 0, 0);
+      }
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    border-radius: rem(20);
+    border: 1px solid #ccc;
+    padding: rem(16) rem(25);
+    resize: vertical;
+    min-height: rem(87);
+    transition: all 0.3s ease 0s;
+    &::placeholder {
+      color:#000;
+    }
+    &._form-error {
+      box-shadow: 0px 0px 18px 0px rgba(255, 0, 0, 0.2) inset;
+      border-color: rgb(255, 0, 0);
+      &::placeholder {
+        color:rgb(255, 0, 0);
+      }
+    }
+  }
+
+  &__agree {
+    position: relative;
+    &:not(:last-child) {margin-bottom: rem(30);}
+  }
+
+  &__checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    opacity: 0;
+    &:checked+label::after {
+      display: inline-block;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    color: #425C5A;
+    position: relative;
+    transition: color 0.3s ease 0s;
+    cursor: pointer;
+    &::before{
+      content:'';
+      display: inline-block;
+      width: rem(12);
+      height: rem(12);
+      flex: 0 0 rem(12);
+      border: 1px solid #425C5A;
+      text-decoration: underline;
+      transition: border-color 0.3s ease 0s;
+    }
+    &::after{
+      content:'';
+      position: absolute;
+      top: 50%;
+      left: rem(3);
+      width: rem(5);
+      height: rem(3);
+      border-bottom: 1px solid #425C5A;
+      border-left: 1px solid #425C5A;
+      transform: rotate(-45deg);
+      display: none;
+    }
+    a {
+      text-decoration: underline;
+      @media (any-hover: hover){
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+    ._form-error & {
+      color: red;
+      &::before{
+        border-color: red;
+      }
+    }
+  }
+
+  &__submit {
+    min-width: rem(280);
+  }
+}
+.additional-tabs {
+
+  &__head {
+    padding:rem(13) rem(15);
+    @include adaptiveValue("padding-left", 111, 15, 1920, 480, 1);
+  }
+
+  &__title {
+    color: $darkgreen;
+    font-weight: 600;
+    @include adaptiveValue("font-size", 24, 20);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    @include adaptiveValue("padding-left", 111, 15, 1920, 480, 1);
+    display: flex;
+    align-items: center;
+    &:nth-child(2n-1) {
+      background-color: rgba(86, 187, 62, 0.1);
+    }
+    @media (max-width:$mobileSmall){
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__key {
+    padding:rem(13) rem(15);
+    @include adaptiveValue("min-width", 317, 280, 1920, 767, 2);
+    @media (min-width:$mobileSmall){
+      border-right: 1px solid #C8C8C8;
+    }
+    @media (max-width:$mobileSmall){
+      border-bottom: 1px solid #C8C8C8;
+    }
+  }
+
+  &__value {
+    padding:rem(13) rem(15);
+    @include adaptiveValue("padding-left", 100, 15, 1920, 480, 1);
+  }
+}
+//========================================================================================================================================================
+
+.faq-recomended {
+  @include adaptiveValue("padding-top", 50, 25, 1920, 480, 1);
+  @include adaptiveValue("padding-bottom", 50, 25, 1920, 480, 1);
+
+  &__head {
+  }
+
+  &__title {
+  }
+
+  &__body {
+  }
+
+  &__item {
+  }
+}
+.item-faq {
+  border-radius: rem(5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  &:not(:last-child) {margin-bottom: rem(20);}
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: rem(20);
+    @include adaptiveValue("padding-top", 25, 15);
+    @include adaptiveValue("padding-bottom", 25, 15);
+    @include adaptiveValue("padding-left", 60, 15);
+    @include adaptiveValue("padding-right", 60, 15);
+    svg {
+      transition: all 0.3s ease 0s;
+    }
+    &._spoller-active {
+      svg {
+        transform: rotate(90deg)
+      }
+    }
+  }
+
+  &__title {
+    color: #425C5A;
+    @include adaptiveValue("font-size", 20, 16);
+  }
+
+  &__body {
+    @include adaptiveValue("padding-left", 60, 15);
+    @include adaptiveValue("padding-right", 60, 15);
+    line-height: 1.2;
+    ._content {
+      @include adaptiveValue("padding-top", 25, 15);
+      @include adaptiveValue("padding-bottom", 25, 15);
+    }
+  }
+}
+//========================================================================================================================================================
+
+.like-recomended {
+  @include adaptiveValue("padding-top", 50, 25, 1920, 480, 1);
+  @include adaptiveValue("padding-bottom", 100, 50, 1920, 480, 1);
+
+  &__head {
+  }
+
+  &__title {
+  }
+
+  &__body {
+  }
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    .splide__arrows {
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      left: 0;
+      height: 100%;
+      pointer-events: none;
+      transition: transform 0.3s ease 0s;
+      transform: scaleX(1.5) translateY(-50%);
+    }
+    .splide__arrow {
+      pointer-events: all;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: rem(5);
+      transition: all 0.3s ease 0s;
+      &--prev {
+        transform: rotate(180deg);
+      }
+      @media (any-hover: hover){
+        &:hover{
+          background-color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+    @media (any-hover: hover){
+      &:hover{
+        .splide__arrows {
+          transform: scaleX(.99) translateY(-50%);
+        }
+      }
+    }
+  }
+
+  &__track {
+  }
+
+  &__list {
+  }
+
+  &__slide {
+  }
+}
+
+.slide-like {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  padding-bottom: rem(20);
+  align-items: center;
+  border: 1px solid #D9D9D9;
+
+  &__image {
+    align-self: stretch;
+    img {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+  }
+
+  &__name {
+    padding: 0 rem(15);
+    font-weight: 600;
+    color:#000;
+  }
+
+  &__rating {
+    padding: 0 rem(15);
+    display: flex;
+    gap: rem(5);
+    overflow: auto;
+  }
+
+  &__comments {
+    padding: 0 rem(15);
+    font-weight: 500;
+  }
+}
