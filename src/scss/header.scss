@@ -95,6 +95,10 @@
   &__list {
     display: flex;
     align-items: center;
+    @media (max-width:$tablet){
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     @media (max-width:$mobile){
       flex-direction: column;
       align-items: stretch;
@@ -102,10 +106,8 @@
   }
 
   &__item {
-    @include adaptiveValue("padding-left", 27, 13, 1920, 767, 2);
-    @include adaptiveValue("padding-right", 27, 13, 1920, 767, 2);
     @media (max-width:$mobile){
-      &:nth-child(2n) {
+      &:nth-child(2n) a {
         background-color: rgba(87, 187, 62, 0.3);
       }
     }
@@ -114,10 +116,17 @@
   &__link {
     display: block;
     transition: all 0.3s ease 0s;
-    font-weight: 500;
+    font-weight: 600;
+    padding: rem(10);
+    text-transform: capitalize;
     @media (any-hover: hover){
       &:hover{
-        color: $green;
+        color: #fff;
+        background-color: $green;
+        &::before,&::after{
+          content:'';
+          background-color: #fff;
+        }
       }
     }
     @media (min-width:$mobile){
@@ -187,6 +196,87 @@
     }
     img {
       pointer-events: none;
+    }
+  }
+}
+
+.spollers-menu {
+
+  &__item {
+    position: relative;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: left;
+    position: relative;
+    padding-right: rem(30);
+    &::before,&::after{
+      content:'';
+      position: absolute;
+      width: rem(10);
+      height: rem(2);
+      background-color: #000;
+      top: 50%;
+      transition: all 0.3s ease 0s;
+    }
+    &::before{
+      transform: translate(-50%) rotate(-45deg);
+      right: 0;
+    }
+    &::after{
+      content:'';
+      right: rem(7);
+      transform: translate(-50%) rotate(45deg);
+    }
+    &._spoller-active {
+      &::before{
+        transform: translate(-50%) rotate(45deg);
+      }
+      &::after{
+        transform: translate(-50%) rotate(-45deg);
+      }
+      @media (min-width:$mobile){
+        color: #fff;
+        background-color: $green;
+        &::before,&::after{
+          background-color: #fff;
+        }
+      }
+      @media (max-width:$mobile){
+        background-color: rgba(87, 187, 62, 0.3);
+      }
+    }
+  }
+
+  &__body {
+    background-color: #fff;
+    @media (min-width:$mobile){
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      position: absolute;
+      left: 0;
+      top: 100%;
+    }
+  }
+
+  &__link {
+    padding: rem(10);
+    transition: all 0.3s ease 0s;
+    display: block;
+    @media (min-width:$mobile){
+      white-space: nowrap;
+    }
+    @media (max-width:$mobile){
+      padding: rem(10) rem(25);
+      &:not(:last-child) {
+        border-bottom: 1px solid $darkgreen;
+      }
+    }
+    @media (any-hover: hover){
+      &:hover{
+        color: #fff;
+        background-color: $green;
+      }
     }
   }
 }
